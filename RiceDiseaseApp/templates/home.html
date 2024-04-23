@@ -1,0 +1,52 @@
+{% load static %}
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo">
+                <font size="6" color="white">RICE LEAF DISEASE DETECTION USING DEEP LEARNING</font>
+            </div>
+        </div>
+        <div id="menu">
+            <ul>
+                <center>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About the Project</a></li>
+                    <li><a href="{% url 'DandS' %}">Diseases and symptoms</a></li>
+                    <li><a href="{% url 'Login' %}">Login</a></li>
+                    <li><a href="{% url 'Register' %}">Register</a></li>
+                </center>
+            </ul>
+            <br class="clearfix" />
+        </div>
+        <div id="splash">
+            <div style="display: flex;">
+                <a href="{% url 'index' %}" style="flex: 1;">
+                    <img class="pic" src="{% static 'images/rice.jpg' %}" width="230" height="230" alt="Button Image" />
+                </a>
+                <div style="flex: 2;">
+                    <p>
+                        Rice is one of the most essential crops worldwide, serving as a staple food for a significant
+                        portion of the global population. However, rice cultivation faces numerous challenges, including
+                        the threat of various diseases that can significantly impact crop yield and quality. To address
+                        this issue, our project focuses on leveraging deep learning techniques for the automatic
+                        detection and classification of diseases in rice plants.
+                        Utilizing deep learning algorithms, particularly convolutional neural networks (CNNs), our
+                        project aims to develop a robust and efficient system capable of accurately identifying common
+                        diseases affecting rice plants. These diseases include but are not limited to blast, bacterial
+                        blight, sheath blight, rice tungro disease, and brown spot.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
+</body>
+
+</html>

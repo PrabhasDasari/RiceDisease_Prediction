@@ -1,0 +1,70 @@
+{% load static %}
+<html>
+
+<head>
+	<title>Predicting the Rice leaf diseases using CNN</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+	<script LANGUAGE="Javascript">
+		function validate() {
+			var x = document.forms["f1"]["t1"].value;
+
+			if (x == null || x == "") {
+				window.alert("plant image must be upload");
+				document.f1.t1.focus();
+				return false;
+			}
+
+
+
+			return true;
+		}
+
+
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<center>
+					<font size="6" color="white">RICE LEAF DISEASE DETECTION USING DEEP LEARNING</font>
+				</center>
+			</div>
+			<div id="slogan">
+
+			</div>
+		</div>
+		<div id="menu">
+			<ul>
+				<center>
+					<li><a href="{% url 'Train' %}">Train Algorithms</a></li>
+					<li><a href="{% url 'Upload' %}">Upload Rice Image</a></li>
+					<li><a href="{% url 'comparison' %}">Result analysis</a></li>
+					<li><a href="{% url 'DandS1' %}">Diseases and symptoms</a></li>
+					<li><a href="{% url 'index' %}">Logout</a></li>
+				</center>
+			</ul>
+			<br class="clearfix" />
+		</div>
+
+		<div id="splash">
+			<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+			<center>
+				<form name="f1" method="post" action={% url 'UploadImage' %} enctype="multipart/form-data"
+					OnSubmit="return validate()">
+					{% csrf_token %}<br />
+					<h3><b>Upload Image Dataset</b></h3>
+					<div style="text-align: center;">
+						<input type="file" name="t1" style="font-family: Comic Sans MS;" size="60"><br>
+						<input type="submit" value="Submit">
+
+					</div>
+				</form>
+			</center>
+		</div>
+	</div>
+</body>
+
+</html>

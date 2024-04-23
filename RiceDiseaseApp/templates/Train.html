@@ -1,0 +1,39 @@
+{% load static %}
+<html>
+
+<head>
+	<title>Predicting the Rice leaf diseases using CNN</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<font size="6" color="white">RICE LEAF DISEASE DETECTION USING DEEP LEARNING</font>
+			</div>
+		</div>
+		<div id="menu">
+			<ul>
+				<center>
+					<li><a href="{% url 'Train' %}">Train Algorithms</a></li>
+					<li><a href="{% url 'Upload' %}">Upload Rice Image</a></li>
+					<li><a href="{% url 'comparison' %}">Result analysis</a></li>
+					<li><a href="{% url 'DandS1' %}">Diseases and symptoms</a></li>
+					<li><a href="{% url 'index' %}">Logout</a></li>
+				</center>
+			</ul>
+			<br class="clearfix" />
+		</div>
+		<div id="splash">
+			<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+			<center>
+				{{ data|safe }}
+			</center>
+		</div>
+		<!-- <p>CNN, or Convolutional Neural Networks, are utilized in rice plant disease detection by analyzing images
+			 of rice plants to identify signs of diseases such as blast, bacterial leaf blight, and brown spot.</p> -->
+</body>
+
+</html>
